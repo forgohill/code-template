@@ -13,6 +13,7 @@
   /* width: 650px; */
   margin: 0 auto;
 }
+
 .section {
   width: 100%;
 }
@@ -51,6 +52,8 @@
   background-color: #fff;
   padding: 20px;
   border: none;
+
+  cursor: pointer;
 }
 
 .items {
@@ -70,6 +73,7 @@
   height: 110px;
   align-items: center;
 }
+
 .todo_item__header {
   margin: 0 auto 0 0;
   font-size: 24px;
@@ -92,17 +96,24 @@
   background-image: url('../images/Edit.svg');
   background-position: center;
   background-repeat: no-repeat;
+
+  cursor: pointer;
 }
 
 .button__duplicate {
   background-image: url('../images/Duplicate.svg');
   background-position: center;
   background-repeat: no-repeat;
+
+  cursor: pointer;
 }
+
 .button__delete {
   background-image: url('../images/delete.svg');
   background-position: center;
   background-repeat: no-repeat;
+
+  cursor: pointer;
 }
 
 .todo_item__header-editing {
@@ -113,4 +124,6 @@
   padding: 10px;
   font-size: 24px;
   line-height: 29px;
+
+  cursor: pointer;
 }
