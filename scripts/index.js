@@ -44,26 +44,39 @@ const handleEdit = (evt) => {
     if (e.key === 'Enter') {
       title.textContent = titleInput.value;
       titleInput.remove();
-      // console.log(title, thisItem);
       evt.target.closest('.todo_item').prepend(title);
     }
   });
   evt.target.closest('.todo_item').prepend(titleInput);
 };
 
+itemListWrapper.addEventListener('click', (evt) => {
+  console.log(evt.target);
+  if (evt.target.classList.contains('button__delete')) {
+    handleDelete(evt)
+  } else if (evt.target.classList.contains('button__duplicate')) {
+    handleDublicate(evt)
+  } else if (evt.target.classList.contains('button__edit')) {
+    handleEdit(evt)
+  }
+});
 // функция которая создает элементы
 const getItemElement = (title) => {
   const newItemElement = template.content.cloneNode(true);
   const newItemTitle = newItemElement.querySelector('.todo_item__header');
+  // const buttons = newItemElement.querySelector('.buttons');
+
+
   newItemTitle.textContent = title;
+
 
   const deleteButton = newItemElement.querySelector('.button__delete');
   const editButton = newItemElement.querySelector('.button__edit');
   const duplicateButton = newItemElement.querySelector('.button__duplicate');
 
-  deleteButton.addEventListener('click', handleDelete);
-  duplicateButton.addEventListener('click', handleDublicate);
-  editButton.addEventListener('click', handleEdit);
+  // deleteButton.addEventListener('click', handleDelete);
+  // duplicateButton.addEventListener('click', handleDublicate);
+  // editButton.addEventListener('click', handleEdit);
 
   return newItemElement;
 };
